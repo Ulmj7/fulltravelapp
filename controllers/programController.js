@@ -13,6 +13,7 @@ const createProgram = async (req, res) => {
             activities,
             duration,
             price,
+            priceDescription,
             image,
             difficulty,
             bestTime,
@@ -50,6 +51,7 @@ const createProgram = async (req, res) => {
             activities: activities || [],
             duration,
             price,
+            priceDescription: priceDescription || 'Үнэ нь бүлгийн хэмжээнээс хамаарна',
             image,
             difficulty: difficulty || 'moderate',
             bestTime,
@@ -100,6 +102,7 @@ const getAllPrograms = async (req, res) => {
                 activities: program.activities,
                 duration: program.duration,
                 price: program.price,
+                priceDescription: program.priceDescription,
                 image: program.image,
                 difficulty: program.difficulty,
                 bestTime: program.bestTime,
@@ -136,6 +139,7 @@ const getOrganizationPrograms = async (req, res) => {
                 activities: program.activities,
                 duration: program.duration,
                 price: program.price,
+                priceDescription: program.priceDescription,
                 image: program.image,
                 difficulty: program.difficulty,
                 bestTime: program.bestTime,
@@ -172,7 +176,7 @@ const updateProgram = async (req, res) => {
         // Update fields
         const allowedUpdates = [
             'title', 'subtitle', 'description', 'fullDescription',
-            'highlights', 'activities', 'duration', 'price',
+            'highlights', 'activities', 'duration', 'price', 'priceDescription',
             'image', 'difficulty', 'bestTime', 'status'
         ];
 

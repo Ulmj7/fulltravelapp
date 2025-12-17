@@ -40,6 +40,10 @@ const programSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    priceDescription: {
+        type: String,
+        default: 'Үнэ нь бүлгийн хэмжээнээс хамаарна',
+    },
     image: {
         type: String,
         required: true,
